@@ -1,0 +1,20 @@
+# Meta-grammar for PLCC lexical specifications
+# Students should complete this grammar to parse PLCC lexical specifications
+
+# TODO: Add lexical specification here
+# You'll need tokens for:
+# - skip, token keywords
+# - token names (uppercase identifiers)
+# - patterns (quoted strings)
+# - comments (skip them)
+
+%
+# TODO: Add syntactic specification here
+# Your grammar should handle:
+# - A specification is a list of lines
+# - Each line is either a comment or a rule
+# - Each rule is either a skip rule or a token rule
+# - The "token" keyword is optional in token rules
+
+%
+# Semantic specification will be added in Q7

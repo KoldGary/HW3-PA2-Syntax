@@ -1,0 +1,14 @@
+# Pretty-printer for PLCC lexical specifications
+# Copy your Q6 grammar here and add semantic actions
+
+# TODO: Copy your lexical specification from Q6
+
+%
+# TODO: Copy your syntactic specification from Q6
+
+%
+# TODO: Add semantic specification here
+# Your pretty-printer should:
+# - Skip comments in output
+# - Add "token" keyword to token rules that don't have it
+# - Preserve the structure and order of rules
