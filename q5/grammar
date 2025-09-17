@@ -6,8 +6,9 @@ token AT '@'
 token LP '\('
 token RP '\)'
 %
-# Syntactic specification
-#
+<balanced>::= <open_close> AT
+<open_close> ::= OPEN <open_close> Close <open_close> | /*empty*/
+%
 # Here is a sketch of the first rule. Replace ... with something and
 # add more rules below it.
 <balanced> ::= ... AT

@@ -34,8 +34,7 @@ of type BBB, and so forth.
 ### ANSWER
 
 ```
-[write your answer here]
-```
+Goo(Token THIS, VAR var, Token IS, Silly)```
 
 ---
 
@@ -50,8 +49,7 @@ Repeat the question above, except use the following grammar rule:
 ### ANSWER
 
 ```
-[write your answer here]
-```
+many(THIS this, rule, HAS has MULTIPLE multiple, OCCURANCES occurances. OF of, stuff stuff)```
 
 ---
 
@@ -66,8 +64,7 @@ Repeat the question above, except use the following grammar rule:
 ### ANSWER
 
 ```
-[write your answer here]
-```
+Classes(CSIT c1, CSIT c2, CSIT c3)```
 
 ---
 
@@ -90,8 +87,7 @@ explain your answer -- just give the corrected grammar rule.
 ### ANSWER
 
 ```
-[write your answer here]
-```
+<VAR> ::= TOKEN <foo>```
 
 ---
 
