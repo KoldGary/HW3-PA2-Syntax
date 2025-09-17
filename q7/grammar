@@ -2,6 +2,51 @@
 # Copy your Q6 grammar here and add semantic actions
 
 # TODO: Copy your lexical specification from Q6
+skip WS '\s+'
+skip COMMENT '#.*'
+token SKIP 'skip'
+token TOKEN 'token'
+token NAME '[A-Z0-9_]+'
+token PATTERN '\'[^\']*\''
+
+%
+<spec> ::= <lines>
+<lines> ::= <line> <lines> | 
+<line> ::= <rule> | COMMENT
+<rule> ::= SKIP NAME PATTERN | TOKEN NAME PATTERN | NAME PATTERN
+%
+abstract class spec {
+  public abstract String show();
+}
+class lines extends spec {
+  lines(line head, lines tail) { this.head = head; this.tail = tail; }
+  lines() {}
+  public String show() {
+    if (this instanceof lines) {
+      return head.show() + (tail != null ? tail.show() : "");
+    }
+    return "";
+  }
+}
+class line extends spec {
+  line(rule x) { this.x = x; }
+  public String show() {
+    return x.show();
+  }
+}
+class rule extends spec {
+  rule(SKIP s, NAME n, PATTERN p) { this.s = s; this.n = n; this.p = p; }
+  rule(TOKEN t, NAME n, PATTERN p) { this.t = t; this.n = n; this.p = p; }
+  rule(NAME n, PATTERN p) { this.n = n; this.p = p; }
+  public String show() {
+    if (this.s != null)
+      return "skip " + n.lexeme + " " + p.lexeme + "\n";
+    if (this.t != null)
+      return "token " + n.lexeme + " " + p.lexeme + "\n";
+    return "token " + n.lexeme + " " + p.lexeme + "\n";
+  }
+}
+
 
 %
 # TODO: Copy your syntactic specification from Q6
