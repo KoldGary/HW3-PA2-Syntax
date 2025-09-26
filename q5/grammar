@@ -1,13 +1,12 @@
-# Q6 - Parentheses balancing
-
 # Lexical specification
 skip WS '\s+'
 token AT '@'
 token LP '\('
 token RP '\)'
+
 %
+
 # Syntactic specification
-#
-# Here is a sketch of the first rule. Replace ... with something and
-# add more rules below it.
-<balanced> ::= ... AT
+<balanced> ::= <pair> | <sequence> | <balanced> AT <balanced> | ε
+<pair> ::= LP <balanced> RP
+<sequence> ::= <balanced> <sequence> | ε

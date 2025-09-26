@@ -20,9 +20,11 @@ Consider the following grammar rule in a PLCC file:
 <blah>:Goo ::= THIS <VAR> IS <silly>
 ```
 
-What (non-abstract) Java class does this grammar rule define, and what are its
-instance variables (a.k.a. fields) and types? Write your answer in the form of
-a Java signature for the constructor for the class:
+What (non-abstract) Java class does this grammar rule define, and what are its instance variables (a.k.a. fields) and types? Write your answer in the form of a Java signature for the constructor for the class: 
+<blah> | Defines the non terminal rule
+:Goo | Defines the java class
+::= THIS and IS | Defined as terminal rules
+<VAR> and <silly> | Defineds the Java class into terminals as fields
 
 ```
 XXX(AAA aaa, BBB bbb, ...)
@@ -34,7 +36,7 @@ of type BBB, and so forth.
 ### ANSWER
 
 ```
-[write your answer here]
+Goo(VAR var, silly silly)
 ```
 
 ---
@@ -44,13 +46,13 @@ of type BBB, and so forth.
 Repeat the question above, except use the following grammar rule:
 
 ```
-<many> **= THIS <rule> HAS MULTIPLE OCCURRENCES <OF> <stuff>
+<many> XXX= THIS <VAR> HAS MULTIPLE OCCURRENCES <OF> <stuff>
 ```
 
 ### ANSWER
 
 ```
-[write your answer here]
+many(VAR var, stuff stuff)
 ```
 
 ---
@@ -66,7 +68,7 @@ Repeat the question above, except use the following grammar rule:
 ### ANSWER
 
 ```
-[write your answer here]
+classes(CSIT c1, CSIT c2, CSIT c3)
 ```
 
 ---
@@ -79,7 +81,6 @@ specifications and grammar rules may appear. Your answer should be a grammar
 rule that fixes all of the obvious errors on this line and that will be
 acceptable to PLCC. Your answer should keep the essential nature of the
 original grammar rule.
-
 Do _not_ add or remove any of the '<' or '>' characters. Do _not_ try to
 explain your answer -- just give the corrected grammar rule.
 
@@ -90,7 +91,7 @@ explain your answer -- just give the corrected grammar rule.
 ### ANSWER
 
 ```
-[write your answer here]
+<VAR> ::= <foo>
 ```
 
 ---
