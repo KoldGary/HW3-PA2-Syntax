@@ -1,9 +1,19 @@
 # Lexical specification
-skip WS '\s+'
-token COMMENT '#.*'
 token SKIP 'skip'
 token TOKEN 'token'
-token ID '[A-Z][A-Z0-9_]*'
-token PATTERN '".*?"'
+token NAME '[A-Z][A-Z0-9_]*'
+token PATTERN '\'.*?\''
+token COMMENT '#.*'
+token NEWLINE '\n+'
+skip WHITESPACE '\s+'
 
 %
+# Syntactic specification
+<spec>:Spec ::= <lines>
+<lines> ::= <line> <lines> | <line>
+<line> ::= <comment> | <rule>
+<comment>:Comment ::= COMMENT
+<rule> ::= <skip_rule> | <token_rule>
+<skip_rule>:SkipRule ::= SKIP NAME PATTERN
+<token_rule>:TokenRule ::= TOKEN? NAME PATTERN
+
